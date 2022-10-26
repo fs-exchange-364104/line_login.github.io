@@ -1,4 +1,6 @@
 'use strict';
+const httpError = require('https-error');
+const https = require('https');
 const express = require('express');
 const request = require('request');
 const uuidv4 = require('uuid/v4');
@@ -6,6 +8,7 @@ const session = require('express-session');
 const random = require('crypto');
 const bodyParser = require('body-parser');
 const jsonwebtoken = require('jsonwebtoken');
+const { hostname } = require('os');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
@@ -172,4 +175,6 @@ app.post('/userInfo', function (req, res) {
 })
 
 // start server
-app.listen(PORT, () => console.log(`Server running at ${PORT}`));
+app.listen(PORT, hostname, () => console.log(`Server running at ${PORT}`));
+
+https.createServer({}, app).listen(PORT, hostname);
