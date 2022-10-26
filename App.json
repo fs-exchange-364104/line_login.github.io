@@ -1,0 +1,9 @@
+{
+	"name": "line-login.github.io",
+	"description": "Line login nodejs",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fs-exchange-364104/line_login.github.io.git"
+	},
+	"homepage": "https://github.com/fs-exchange-364104/line_login.github.io#README.md"
+}
